@@ -2,6 +2,9 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 26
+    packagingOptions {
+        exclude 'META-INF/rxjava.properties'
+    }
     defaultConfig {
         applicationId "com.app.zilla.jinrishi"
         minSdkVersion 15
@@ -34,4 +37,17 @@ dependencies {
     //高级的recyclerview
     compile 'com.jude:easyrecyclerview:4.4.2'
     compile 'com.android.support:recyclerview-v7:26.1.0'
+
+
+    compile('com.squareup.retrofit2:retrofit:2.1.0'){
+        exclude group: 'com.squareup.okhttp3'
+    }
+    compile('com.squareup.retrofit2:converter-gson:2.1.0'){
+        exclude group: 'com.google.code.gson'
+        exclude group: 'com.squareup.okhttp3'
+    }
+    compile('com.squareup.retrofit2:adapter-rxjava:2.1.0'){
+        exclude group: 'io.reactivex'
+        exclude group: 'com.squareup.okhttp3'
+    }
 }
