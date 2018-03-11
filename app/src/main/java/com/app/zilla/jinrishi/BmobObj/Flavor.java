@@ -6,4 +6,5 @@ package com.app.zilla.jinrishi.BmobObj;
 
 public class Flavor {
     //一组int
+
 }

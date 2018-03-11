@@ -2,11 +2,14 @@ package com.app.zilla.jinrishi.BmobObj;
 
 import java.io.File;
 
+import cn.bmob.v3.BmobObject;
+import cn.bmob.v3.BmobUser;
+
 /**
  * Created by 74434 on 2018/3/9.
  */
 
-public class Dish {
+public class Dish extends BmobObject {
     private String dish_name;
     private String type;
     private Flavor flavor_description;

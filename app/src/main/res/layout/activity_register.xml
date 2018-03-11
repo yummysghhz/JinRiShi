@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/login_bg"
-    android:fitsSystemWindows="true"
     android:clipToPadding="true"
+    android:fitsSystemWindows="true"
     tools:context="com.app.zilla.jinrishi.activity.RegisterActivity">
 
     <Spinner
@@ -20,30 +20,32 @@
         android:layout_marginTop="8dp"
         android:background="@android:color/background_light"
 
+        android:dropDownWidth="match_parent"
+        android:spinnerMode="dropdown"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.477" />
+        app:layout_constraintVertical_bias="0.386" />
 
     <EditText
         android:id="@+id/username_et"
         android:layout_width="202dp"
-        android:layout_height="42dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="404dp"
+        android:layout_marginEnd="4dp"
         android:layout_marginTop="8dp"
         android:ems="10"
-        android:hint="用户名"
+        android:hint="@string/username"
         android:inputType="textPersonName"
         android:singleLine="true"
-        app:layout_constraintBottom_toTopOf="@+id/school_sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.953"
+        android:layout_marginRight="4dp" />
 
     <EditText
         android:id="@+id/password_et"
@@ -54,14 +56,14 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:ems="10"
-        android:hint="密码"
+        android:hint="@string/password"
         android:inputType="textPassword"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.583" />
+        app:layout_constraintVertical_bias="0.542" />
 
     <EditText
         android:id="@+id/password_re"
@@ -72,14 +74,14 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:ems="10"
-        android:hint="重输密码"
+        android:hint="@string/re_password"
         android:inputType="textPassword"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/password_et"
-        app:layout_constraintVertical_bias="0.007" />
+        app:layout_constraintVertical_bias="0.184" />
 
     <Button
         android:id="@+id/signup_btn"
@@ -90,28 +92,28 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="注册"
+        android:text="@string/register"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/password_re"
-        app:layout_constraintVertical_bias="0.2" />
+        app:layout_constraintVertical_bias="0.208" />
 
-    <ImageButton
-        android:id="@+id/profile_img_btn"
-        android:layout_width="93dp"
-        android:layout_height="98dp"
+    <Button
+        android:id="@+id/back_btn"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="41dp"
+        android:layout_height="39dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:scaleType="fitXY"
-        android:src="@drawable/profle"
-        app:layout_constraintBottom_toTopOf="@+id/username_et"
+        android:background="@drawable/backbtn"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintHorizontal_bias="0.024"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.863" />
+        app:layout_constraintVertical_bias="0.05" />
 
 </android.support.constraint.ConstraintLayout>

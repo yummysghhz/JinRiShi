@@ -1,10 +1,13 @@
 package com.app.zilla.jinrishi.BmobObj;
 
+import cn.bmob.v3.BmobObject;
+import cn.bmob.v3.BmobUser;
+
 /**
  * Created by 74434 on 2018/3/9.
  */
 
-public class Canteen {
+public class Canteen extends BmobObject {
     private String canteen_name;
     private Campus campusIn;
 

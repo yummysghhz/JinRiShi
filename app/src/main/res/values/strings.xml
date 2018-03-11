@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">今日食</string>
+    <string name="username">用户名</string>
+    <string name="password">密码</string>
+    <string name="re_password">重输密码</string>
+    <string name="register">注册</string>
 
 </resources>
