@@ -1,5 +1,7 @@
 package com.app.zilla.jinrishi.activity;
 
+import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -19,6 +21,8 @@ import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.LogInListener;
 
 public class LoginActivity extends AppCompatActivity {
+    public static Context mContext;
+    public static Activity mActivity;
     private Button login_btn;
     private TextView qqlogin_txt;
     private TextView register_txt;
@@ -30,7 +34,8 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);//去掉信息栏
-
+        mActivity = this;
+        mContext = this.getBaseContext();
         setContentView(R.layout.activity_login);
         Bmob.initialize(this, "27d282ae137c850d3661070385de75e3");
 
@@ -73,6 +78,8 @@ public class LoginActivity extends AppCompatActivity {
             public void done(JrsUser jrsUser, BmobException e) {
                 if (jrsUser!=null){
                     Toast.makeText(LoginActivity.this,"登录成功",Toast.LENGTH_SHORT).show();
+                    Intent intent=new Intent(LoginActivity.mContext,TestActivity.class);
+                    LoginActivity.mContext.startActivity(intent);
                 }else {
                     Toast.makeText(LoginActivity.this,"登录失败",Toast.LENGTH_SHORT).show();
                 }

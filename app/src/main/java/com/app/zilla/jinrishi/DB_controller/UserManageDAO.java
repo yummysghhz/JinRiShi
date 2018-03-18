@@ -1,10 +1,13 @@
 package com.app.zilla.jinrishi.DB_controller;
 
+import android.content.Intent;
 import android.widget.Toast;
 
 import com.app.zilla.jinrishi.BmobObj.Campus;
 import com.app.zilla.jinrishi.BmobObj.JrsUser;
+import com.app.zilla.jinrishi.activity.LoginActivity;
 import com.app.zilla.jinrishi.activity.RegisterActivity;
+import com.app.zilla.jinrishi.activity.TestActivity;
 
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.SaveListener;
