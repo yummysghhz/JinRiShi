@@ -31,6 +31,6 @@ public class Campus extends BmobObject {
     public String toString() {
         return "Campus:"+
                 "校名:"+campus_name+"/"+
-                "地址"+campus_address;
+                "地址:"+campus_address;
     }
 }

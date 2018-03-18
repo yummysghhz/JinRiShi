@@ -1,6 +1,7 @@
 package com.app.zilla.jinrishi.activity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v4.app.ActivityCompat;
@@ -41,6 +42,7 @@ public class RegisterActivity extends AppCompatActivity implements CampusItemAda
     private EditText password_et;
     private EditText password_re;
     private Button signup_btn;
+    private Button back_btn;
 
     private Handler handler = new Handler() {
         @Override
@@ -49,9 +51,9 @@ public class RegisterActivity extends AppCompatActivity implements CampusItemAda
                 List<Campus> list = (List<Campus>) msg.obj;
                 for (Campus campus : list) {
                     System.out.println(campus.toString());
-                    spinner_list.add(campus);
+                    //spinner_list.add(campus);
                 };
-
+                spinner_list.addAll(list);
                 CampusItemAdapter adapter = new CampusItemAdapter(RegisterActivity.this, spinner_list,RegisterActivity.this);
                 school_sp.setAdapter(adapter);
 
@@ -83,9 +85,6 @@ public class RegisterActivity extends AppCompatActivity implements CampusItemAda
 
         initView();
 
-
-
-
     }
 
     public void initView(){
@@ -98,6 +97,7 @@ public class RegisterActivity extends AppCompatActivity implements CampusItemAda
         password_et = (EditText) findViewById(R.id.password_et);
         password_re = (EditText) findViewById(R.id.password_re);
         signup_btn = (Button) findViewById(R.id.signup_btn);
+        back_btn=(Button)findViewById(R.id.back_btn);
 
         CampusDAO.getAllCampus(handler);
 
@@ -105,6 +105,16 @@ public class RegisterActivity extends AppCompatActivity implements CampusItemAda
             @Override
             public void onClick(View view) {
                 registerUser();
+            }
+        });
+
+        back_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //跳转到登陆页
+                Intent intent = new Intent();
+                intent.setClass(RegisterActivity.this,LoginActivity.class);
+                RegisterActivity.this.startActivity(intent);
             }
         });
     }
@@ -132,10 +142,5 @@ public class RegisterActivity extends AppCompatActivity implements CampusItemAda
 
     @Override
     public void click(View v) {
-
-
-
-
-
     }
 }

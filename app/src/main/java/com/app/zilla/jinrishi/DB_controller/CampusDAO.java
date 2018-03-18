@@ -5,8 +5,10 @@ import android.os.Message;
 import android.text.style.MaskFilterSpan;
 import android.util.Log;
 import android.widget.ArrayAdapter;
+import android.widget.Toast;
 
 import com.app.zilla.jinrishi.BmobObj.Campus;
+import com.app.zilla.jinrishi.activity.RegisterActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,6 +35,7 @@ public class CampusDAO {
                     handler.sendMessage(message);
 
                 } else {
+                    Toast.makeText(RegisterActivity.mContext,"您的网络走丢了= =",Toast.LENGTH_SHORT);
                     Log.e("bmob", "" + e);
                 }
             }

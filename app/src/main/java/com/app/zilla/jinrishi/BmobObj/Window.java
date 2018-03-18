@@ -26,4 +26,10 @@ public class Window extends BmobObject {
     public void setCanteenIn(Canteen canteenIn) {
         this.canteenIn = canteenIn;
     }
+
+    @Override
+    public String toString() {
+        return window_name+" in "+
+                canteenIn.toString();
+    }
 }

@@ -1,5 +1,7 @@
 package com.app.zilla.jinrishi.BmobObj;
 
+import android.content.Intent;
+
 import java.io.File;
 
 import cn.bmob.v3.BmobObject;
@@ -12,13 +14,13 @@ import cn.bmob.v3.BmobUser;
 public class Dish extends BmobObject {
     private String dish_name;
     private String type;
-    private Flavor flavor_description;
+    private DishFlavor flavor_description;
     private float price;
     private Window windowIn;
     private File dish_image;
     private String dish_description;
-    private int times;
-    private int like_times;
+    private Integer times;
+    private Integer like_times;
 
     public String getDish_name() {
         return dish_name;
@@ -28,7 +30,7 @@ public class Dish extends BmobObject {
         this.dish_name = dish_name;
     }
 
-    public String getType() {
+    public String geishtType() {
         return type;
     }
 
@@ -36,11 +38,11 @@ public class Dish extends BmobObject {
         this.type = type;
     }
 
-    public Flavor getFlavor_description() {
+    public DishFlavor getFlavor_description() {
         return flavor_description;
     }
 
-    public void setFlavor_description(Flavor flavor_description) {
+    public void setFlavor_description(DishFlavor flavor_description) {
         this.flavor_description = flavor_description;
     }
 

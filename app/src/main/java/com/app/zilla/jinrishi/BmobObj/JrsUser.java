@@ -1,5 +1,8 @@
 package com.app.zilla.jinrishi.BmobObj;
 
+import java.io.File;
+import java.util.ArrayList;
+
 import cn.bmob.v3.BmobUser;
 
 /**
@@ -7,11 +10,13 @@ import cn.bmob.v3.BmobUser;
  */
 
 public class JrsUser extends BmobUser {
-    private Campus school; //01 ecnu
-    private Integer flavorPrefNo;
-    private String profile_url;
+    private Campus school;
+    private File profile_img;
     private Integer credit;
-    private Integer mealBudget;
+    private Integer monthly_budget;
+    private ArrayList<String> likes;//记录dish的 ObjectID
+    private UserFlavor flavor_pref;
+
 
     public Campus getSchool() {
         return school;
@@ -21,20 +26,12 @@ public class JrsUser extends BmobUser {
         this.school = school;
     }
 
-    public Integer getFlavorPrefNo() {
-        return flavorPrefNo;
+    public File getProfile_img() {
+        return profile_img;
     }
 
-    public void setFlavorPrefNo(Integer flavorPrefNo) {
-        this.flavorPrefNo = flavorPrefNo;
-    }
-
-    public String getProfile_url() {
-        return profile_url;
-    }
-
-    public void setProfile_url(String profile_url) {
-        this.profile_url = profile_url;
+    public void setProfile_img(File profile_img) {
+        this.profile_img = profile_img;
     }
 
     public Integer getCredit() {
@@ -45,11 +42,27 @@ public class JrsUser extends BmobUser {
         this.credit = credit;
     }
 
-    public Integer getMealBudget() {
-        return mealBudget;
+    public Integer getMonthly_budget() {
+        return monthly_budget;
     }
 
-    public void setMealBudget(Integer mealBudget) {
-        this.mealBudget = mealBudget;
+    public void setMonthly_budget(Integer monthly_budget) {
+        this.monthly_budget = monthly_budget;
+    }
+
+    public ArrayList<String> getLikes() {
+        return likes;
+    }
+
+    public void setLikes(ArrayList<String> likes) {
+        this.likes = likes;
+    }
+
+    public UserFlavor getFlavor_pref() {
+        return flavor_pref;
+    }
+
+    public void setFlavor_pref(UserFlavor flavor_pref) {
+        this.flavor_pref = flavor_pref;
     }
 }

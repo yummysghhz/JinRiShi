@@ -26,4 +26,10 @@ public class Canteen extends BmobObject {
     public void setCampusIn(Campus campusIn) {
         this.campusIn = campusIn;
     }
+
+    @Override
+    public String toString() {
+        return canteen_name+" in "
+                +campusIn.toString();
+    }
 }
