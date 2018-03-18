@@ -26,4 +26,11 @@ public class Campus extends BmobObject {
     public void setCampus_address(String campus_address) {
         this.campus_address = campus_address;
     }
+
+    @Override
+    public String toString() {
+        return "Campus:"+
+                "校名:"+campus_name+"/"+
+                "地址"+campus_address;
+    }
 }

@@ -20,22 +20,22 @@ import cn.bmob.v3.listener.FindListener;
  */
 
 public class CampusDAO {
-    public void getAllCampus(){
+    public static void getAllCampus(final Handler handler) {
         BmobQuery<Campus> query = new BmobQuery<Campus>();
-        //执行查询方法
         query.findObjects(new FindListener<Campus>() {
             @Override
-            public void done(final List<Campus> list, BmobException e) {
-                if(e==null){
-                    for (Campus campus : list) {
-                        campus.getCampus_name();
-                        campus.getCampus_address();
-                    }
-                }else{
-                    Log.i("bmob","失败："+e.getMessage()+","+e.getErrorCode());
+            public void done(List<Campus> list, BmobException e) {
+                if (e == null) {
+                    Message message = handler.obtainMessage();
+                    //以消息为载体
+                    message.obj = list;//这里的list就是查询出list
+                    //向handler发送消息
+                    handler.sendMessage(message);
+
+                } else {
+                    Log.e("bmob", "" + e);
                 }
             }
-
         });
     }
 }

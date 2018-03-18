@@ -7,17 +7,17 @@ import cn.bmob.v3.BmobUser;
  */
 
 public class JrsUser extends BmobUser {
-    private Integer school; //01 ecnu
+    private Campus school; //01 ecnu
     private Integer flavorPrefNo;
     private String profile_url;
     private Integer credit;
     private Integer mealBudget;
 
-    public Integer getSchool() {
+    public Campus getSchool() {
         return school;
     }
 
-    public void setSchool(Integer school) {
+    public void setSchool(Campus school) {
         this.school = school;
     }
 
