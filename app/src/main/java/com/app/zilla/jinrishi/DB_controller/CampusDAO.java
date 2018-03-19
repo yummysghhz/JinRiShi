@@ -22,6 +22,7 @@ import cn.bmob.v3.listener.FindListener;
  */
 
 public class CampusDAO {
+    //查找：所有学校
     public static void getAllCampus(final Handler handler) {
         BmobQuery<Campus> query = new BmobQuery<Campus>();
         query.findObjects(new FindListener<Campus>() {
