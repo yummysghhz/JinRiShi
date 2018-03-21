@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import com.app.zilla.jinrishi.BmobObj.JrsUser;
 import com.app.zilla.jinrishi.R;
+import com.app.zilla.jinrishi.utils.AppInfo;
 
 import cn.bmob.v3.Bmob;
 import cn.bmob.v3.exception.BmobException;
@@ -37,7 +38,7 @@ public class LoginActivity extends AppCompatActivity {
         mActivity = this;
         mContext = this.getBaseContext();
         setContentView(R.layout.activity_login);
-        Bmob.initialize(this, "27d282ae137c850d3661070385de75e3");
+        Bmob.initialize(this, AppInfo.getAppkey());
 
         login_btn=(Button) findViewById(R.id.login_btn);
         login_btn=(Button) findViewById(R.id.login_btn);
@@ -60,6 +61,14 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 loginUser();
+            }
+        });
+
+        //第三方登录
+        qqlogin_txt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
             }
         });
     }

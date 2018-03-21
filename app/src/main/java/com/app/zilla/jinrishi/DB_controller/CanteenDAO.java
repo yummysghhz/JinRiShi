@@ -22,12 +22,13 @@ import cn.bmob.v3.listener.FindListener;
  */
 
 public class CanteenDAO {
+    //查找：某校所有食堂
     public static void getCampusCanteen(final Handler handler) {
         BmobQuery<Canteen> query = new BmobQuery<Canteen>();
 
         JrsUser currentUser=JrsUser.getCurrentUser(JrsUser.class);
 
-        System.out.println(currentUser.getSchool().getObjectId());
+        //System.out.println(currentUser.getSchool().getObjectId());
 
         query.addWhereEqualTo("campusIn",currentUser.getSchool().getObjectId());
 

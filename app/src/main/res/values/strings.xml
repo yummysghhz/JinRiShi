@@ -5,5 +5,7 @@
     <string name="password">密码</string>
     <string name="re_password">重输密码</string>
     <string name="register">注册</string>
+    <string name="log_in">登录</string>
+    <string name="login_qq">QQ登录</string>
 
 </resources>

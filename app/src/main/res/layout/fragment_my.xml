@@ -1,15 +1,95 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.app.zilla.jinrishi.fragment.MyFragment">
+    android:background="#ebebef"
+    android:orientation="vertical">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="FourFragment"
-        android:textSize="50dp" />
+        android:layout_height="wrap_content">
 
-</FrameLayout>
+        <ImageView
+            android:id="@+id/iv_blur"
+            android:layout_width="match_parent"
+            android:layout_height="200dp" />
+
+        <ImageView
+            android:id="@+id/iv_avatar"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_centerInParent="true" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/iv_blur"
+            android:orientation="horizontal"
+            android:layout_marginBottom="20dp">
+
+            <ImageView
+                android:id="@+id/user_line"
+                android:layout_width="1dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="15dp"
+                android:layout_centerHorizontal="true"
+                android:background="@color/white"/>
+
+            <TextView
+                android:id="@+id/user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@id/user_line"
+                android:textSize="17sp"
+                android:textColor="@color/white"
+                android:text="ZiLLA"/>
+
+            <TextView
+                android:id="@+id/user_val"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:textSize="17sp"
+                android:textColor="@color/white"
+                android:layout_toRightOf="@id/user_line"
+                android:text="182****5882"/>
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <com.app.zilla.jinrishi.fragment.my_fragment.MyItem
+        android:id="@+id/my_likes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:show_bottomline="true"
+        app:show_leftimg="@drawable/shoucang"
+        app:show_text="我的收藏" />
+
+    <com.app.zilla.jinrishi.fragment.my_fragment.MyItem
+        android:id="@+id/my_history"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:show_bottomline="true"
+        app:show_leftimg="@drawable/lishi"
+        app:show_text="一周历史" />
+
+    <com.app.zilla.jinrishi.fragment.my_fragment.MyItem
+        android:id="@+id/my_img"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:show_bottomline="false"
+        app:show_leftimg="@drawable/xiazai"
+        app:show_text="吃货形象" />
+
+    <com.app.zilla.jinrishi.fragment.my_fragment.MyItem
+        android:id="@+id/version_update"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:show_bottomline="false"
+        app:show_leftimg="@drawable/about"
+        app:show_text="关于app" />
+</LinearLayout>

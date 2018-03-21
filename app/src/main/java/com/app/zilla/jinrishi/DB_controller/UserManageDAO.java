@@ -17,6 +17,7 @@ import cn.bmob.v3.listener.SaveListener;
  */
 
 public class UserManageDAO {
+    //用户注册
     public static void registerUser(String username, String password, Campus school){
         final JrsUser user = new JrsUser();
         user.setUsername(username);

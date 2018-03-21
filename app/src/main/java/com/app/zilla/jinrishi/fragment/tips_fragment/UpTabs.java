@@ -10,14 +10,9 @@ import java.util.List;
 public class UpTabs {
     private static final List<UpTabInfo> Selected = new ArrayList<UpTabInfo>();
     static{
-        Selected.add(new UpTabInfo("今日"));
-        Selected.add(new UpTabInfo("头条"));
-        Selected.add(new UpTabInfo("娱乐"));
-        Selected.add(new UpTabInfo("财经"));
-        Selected.add(new UpTabInfo("军事"));
-        Selected.add(new UpTabInfo("科技"));
-        Selected.add(new UpTabInfo("时尚"));
-        Selected.add(new UpTabInfo("体育"));
+        Selected.add(new UpTabInfo(" 美食 "));
+        Selected.add(new UpTabInfo(" 健康 "));
+        Selected.add(new UpTabInfo(" 精选 "));
     }
     /***
      * 获得头部tab的所有项

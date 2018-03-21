@@ -5,4 +5,6 @@ package com.app.zilla.jinrishi.DB_controller;
  */
 
 public class DishOrderDAO {
+    //主要写增 查，删改不写
+    //查找：按User查找
 }

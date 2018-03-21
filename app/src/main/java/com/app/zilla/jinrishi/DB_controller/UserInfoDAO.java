@@ -5,4 +5,7 @@ package com.app.zilla.jinrishi.DB_controller;
  */
 
 public class UserInfoDAO {
+    //User可用
+    //修改个人信息：username password profile_img 手机号 邮箱
+    //这个不急233333
 }

@@ -36,13 +36,13 @@ public class MainActivity extends FragmentActivity {
             mBottomBar = (BottomTabBar) findViewById(R.id.bottom_bar);
 
             mBottomBar.init(getSupportFragmentManager())
-                    .setImgSize(90, 90)
+                    .setImgSize(85, 85)
                     .setFontSize(12)
                     .setTabPadding(4, 6, 10)
                     .setChangeColor(Color.parseColor("#F8F8FF"), Color.parseColor("#B2DBD5"))
                     .addTabItem("推荐", R.mipmap.canteen, RecFragment.class)
                     .addTabItem("外送", R.mipmap.delivery, DeliveryFragment.class)
-                    .addTabItem("tips", R.mipmap.tips, TipsFragment.class)
+                    .addTabItem("资讯", R.mipmap.tips, TipsFragment.class)
                     .addTabItem("我的", R.mipmap.myinfo, MyFragment.class)
                     .setTabBarBackgroundColor(Color.parseColor("#209E85"))
                     .isShowDivider(false)
