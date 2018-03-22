@@ -15,7 +15,7 @@ import android.widget.Toast;
 
 import com.app.zilla.jinrishi.BmobObj.JrsUser;
 import com.app.zilla.jinrishi.R;
-import com.app.zilla.jinrishi.utils.AppInfo;
+import com.app.zilla.jinrishi.constants.AppInfo;
 
 import cn.bmob.v3.Bmob;
 import cn.bmob.v3.exception.BmobException;
@@ -38,7 +38,7 @@ public class LoginActivity extends AppCompatActivity {
         mActivity = this;
         mContext = this.getBaseContext();
         setContentView(R.layout.activity_login);
-        Bmob.initialize(this, AppInfo.getAppkey());
+        Bmob.initialize(this, AppInfo.APP_KEY);
 
         login_btn=(Button) findViewById(R.id.login_btn);
         login_btn=(Button) findViewById(R.id.login_btn);

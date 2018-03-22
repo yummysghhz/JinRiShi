@@ -4,11 +4,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Handler;
 import android.os.Message;
-import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.AdapterView;
@@ -22,15 +20,12 @@ import com.app.zilla.jinrishi.DB_controller.CampusDAO;
 import com.app.zilla.jinrishi.DB_controller.UserManageDAO;
 import com.app.zilla.jinrishi.R;
 import com.app.zilla.jinrishi.adapter.CampusItemAdapter;
-import com.app.zilla.jinrishi.utils.AppInfo;
+import com.app.zilla.jinrishi.constants.AppInfo;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import cn.bmob.v3.Bmob;
-import cn.bmob.v3.BmobQuery;
-import cn.bmob.v3.exception.BmobException;
-import cn.bmob.v3.listener.FindListener;
 
 public class RegisterActivity extends AppCompatActivity implements CampusItemAdapter.Callback{
     public static RegisterActivity mactivity;
@@ -81,7 +76,7 @@ public class RegisterActivity extends AppCompatActivity implements CampusItemAda
         mactivity = this;
         mContext = this.getBaseContext();
 
-        Bmob.initialize(this, AppInfo.getAppkey());
+        Bmob.initialize(this, AppInfo.APP_KEY);
 
         initView();
 
