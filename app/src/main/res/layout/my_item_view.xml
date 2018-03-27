@@ -29,8 +29,6 @@
         android:text="设置中心"
         -->
 
-
-
     <ImageView
         android:id="@+id/item_bottom"
         android:layout_width="match_parent"

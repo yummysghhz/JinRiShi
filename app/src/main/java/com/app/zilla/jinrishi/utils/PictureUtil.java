@@ -1,4 +1,4 @@
-package com.app.zilla.jinrishi.utils.Util;
+package com.app.zilla.jinrishi.utils;
 
 import android.content.Context;
 import android.content.Intent;

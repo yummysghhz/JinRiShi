@@ -9,9 +9,9 @@ import rx.Observable;
  */
 
 public interface NewsApiService {
-    @GET("social/")
+    @GET("wxnew/")
     Observable<String> getString(@Query("key")String key, @Query("num") String num, @Query("page") int page);
 
-    @GET("social/")
+    @GET("wxnew/")
     Observable <NewsGson> getNewsData(@Query("key")String key,@Query("num") String num,@Query("page") int page);
 }

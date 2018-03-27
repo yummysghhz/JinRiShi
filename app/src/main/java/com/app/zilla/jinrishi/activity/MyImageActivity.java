@@ -6,7 +6,9 @@ import android.os.Bundle;
 import com.app.zilla.jinrishi.R;
 
 public class MyImageActivity extends AppCompatActivity {
-
+/*
+吃货形象
+*/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

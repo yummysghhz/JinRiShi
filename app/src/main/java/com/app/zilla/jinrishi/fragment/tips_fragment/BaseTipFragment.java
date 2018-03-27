@@ -18,7 +18,7 @@ import com.app.zilla.jinrishi.fragment.tips_fragment.Easyrecycle.NewsAdapter;
 import com.app.zilla.jinrishi.fragment.tips_fragment.html_data.News;
 import com.app.zilla.jinrishi.fragment.tips_fragment.html_data.NewsApiService;
 import com.app.zilla.jinrishi.fragment.tips_fragment.html_data.NewsGson;
-import com.app.zilla.jinrishi.utils.Util.PixUtil;
+import com.app.zilla.jinrishi.utils.PixUtil;
 import com.jude.easyrecyclerview.EasyRecyclerView;
 import com.jude.easyrecyclerview.adapter.RecyclerArrayAdapter;
 import com.jude.easyrecyclerview.decoration.SpaceDecoration;

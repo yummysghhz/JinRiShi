@@ -1,9 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="my_item_view">
-        <attr name="show_bottomline" format="boolean" />
-        <attr name="show_leftimg" format="integer" />
-        <attr name="show_text" format="string" />
-
+    <attr name="show_bottomline" format="boolean" />
+    <attr name="show_leftimg" format="integer" />
+    <attr name="show_text" format="string" />
     </declare-styleable>
+
+    <declare-styleable name="comment_view">
+        <attr name="show_topline" format="boolean" />
+        <attr name="dish_name_text" format="string" />
+        <attr name="price_text" format="float"/>
+        <attr name="like_icon" format="integer"/>
+        <attr name="unlike_icon" format="integer"/>
+        <attr name="dish_img" format="integer"/>
+    </declare-styleable>
+
+
 </resources>

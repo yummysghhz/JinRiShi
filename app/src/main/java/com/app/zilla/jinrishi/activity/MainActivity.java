@@ -29,8 +29,6 @@ public class MainActivity extends FragmentActivity {
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             initWindow();
-            getWindow().addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN);
-            getWindow().addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);//去掉信息栏
 
             setContentView(R.layout.activity_main);
             mBottomBar = (BottomTabBar) findViewById(R.id.bottom_bar);
@@ -66,6 +64,9 @@ public class MainActivity extends FragmentActivity {
                     WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
             getWindow().addFlags(
                     WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN);
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);//去掉信息栏
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
             tintManager = new SystemBarTintManager(this);
             tintManager.setStatusBarTintColor(Color.TRANSPARENT);
             tintManager.setStatusBarTintEnabled(true);
