@@ -16,14 +16,11 @@ import cn.bmob.v3.BmobQuery;
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.FindListener;
 
-/**
- * Created by 74434 on 2018/3/9.
- */
 
 public class WindowDAO {
     //查找：某食堂所有窗口
     public static void getWindowWindow(final Handler handler) {
-        BmobQuery<Window> query = new BmobQuery<Window>();
+        BmobQuery<Window> query = new BmobQuery<>();
 
         JrsUser currentUser=JrsUser.getCurrentUser(JrsUser.class);
 
@@ -42,7 +39,7 @@ public class WindowDAO {
                     handler.sendMessage(message);
 
                 } else {
-                    Toast.makeText(RegisterActivity.mContext,"您的网络走丢了= =",Toast.LENGTH_SHORT);
+                    //Toast.makeText(mContext,"您的网络走丢了= =",Toast.LENGTH_SHORT);
                     Log.e("bmob", "" + e);
                 }
             }

@@ -22,14 +22,15 @@ import com.app.zilla.jinrishi.R;
 import com.app.zilla.jinrishi.adapter.CampusItemAdapter;
 import com.app.zilla.jinrishi.constants.AppInfo;
 
+import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.List;
 
 import cn.bmob.v3.Bmob;
 
 public class RegisterActivity extends AppCompatActivity implements CampusItemAdapter.Callback{
-    public static RegisterActivity mactivity;
-    public static Context mContext;
+    public RegisterActivity mactivity;
+    public Context mContext;
 
     private EditText username_et;
     private Spinner school_sp;
@@ -39,36 +40,7 @@ public class RegisterActivity extends AppCompatActivity implements CampusItemAda
     private Button signup_btn;
     private Button back_btn;
 
-    private Handler handler = new Handler() {
-        @Override
-        public void handleMessage(Message msg) {
-                spinner_list.clear();
-                List<Campus> list = (List<Campus>) msg.obj;
-                for (Campus campus : list) {
-                    System.out.println(campus.toString());
-                    //spinner_list.add(campus);
-                };
-                spinner_list.addAll(list);
-                CampusItemAdapter adapter = new CampusItemAdapter(RegisterActivity.this, spinner_list,RegisterActivity.this);
-                school_sp.setAdapter(adapter);
-
-
-                /** 选项选择监听*/
-
-                school_sp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                    @Override
-                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                        Toast.makeText(RegisterActivity.this, "学校:" + spinner_list.get(position).getCampus_name(), Toast.LENGTH_SHORT).show();
-                    }
-
-                    @Override
-                    public void onNothingSelected(AdapterView<?> parent) {
-                        Toast.makeText(RegisterActivity.this, "请选择学校~", Toast.LENGTH_SHORT).show();
-                    }
-                });
-
-        }
-    };
+    private MyHandler handler= new MyHandler(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -132,10 +104,44 @@ public class RegisterActivity extends AppCompatActivity implements CampusItemAda
             Toast.makeText(RegisterActivity.this,"两次密码不一致",Toast.LENGTH_SHORT).show();
             return;
         }
-        new UserManageDAO().registerUser(username,password,myCampus);
+        new UserManageDAO().registerUser(username,password,myCampus,mContext);
     }
 
     @Override
     public void click(View v) {
     }
+
+    static class MyHandler extends Handler{
+        WeakReference<RegisterActivity> mActivity;
+        MyHandler(RegisterActivity registerActivity){
+            mActivity=new WeakReference(registerActivity);
+        }
+
+        @Override
+        public void handleMessage(Message msg) {
+            final RegisterActivity thisActivity=mActivity.get();
+            thisActivity.spinner_list.clear();
+            List<Campus> list = (List<Campus>) msg.obj;
+            for (Campus campus : list) {
+                System.out.println(campus.toString());
+                //spinner_list.add(campus);
+            };
+            thisActivity.spinner_list.addAll(list);
+            CampusItemAdapter adapter = new CampusItemAdapter(thisActivity, thisActivity.spinner_list,thisActivity);
+            thisActivity.school_sp.setAdapter(adapter);
+
+            thisActivity.school_sp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                @Override
+                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                    Toast.makeText(thisActivity, "学校:" + thisActivity.spinner_list.get(position).getCampus_name(), Toast.LENGTH_SHORT).show();
+                }
+
+                @Override
+                public void onNothingSelected(AdapterView<?> parent) {
+                    Toast.makeText(thisActivity, "请选择学校~", Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
+    }
 }
+

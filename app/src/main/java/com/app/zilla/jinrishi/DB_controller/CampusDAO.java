@@ -17,9 +17,8 @@ import cn.bmob.v3.BmobQuery;
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.FindListener;
 
-/**
- * Created by 74434 on 2018/3/9.
- */
+import static com.app.zilla.jinrishi.activity.LoginActivity.mContext;
+
 
 public class CampusDAO {
     //查找：所有学校
@@ -36,7 +35,7 @@ public class CampusDAO {
                     handler.sendMessage(message);
 
                 } else {
-                    Toast.makeText(RegisterActivity.mContext,"您的网络走丢了= =",Toast.LENGTH_SHORT);
+                    Toast.makeText(mContext,"您的网络走丢了= =",Toast.LENGTH_SHORT).show();
                     Log.e("bmob", "" + e);
                 }
             }

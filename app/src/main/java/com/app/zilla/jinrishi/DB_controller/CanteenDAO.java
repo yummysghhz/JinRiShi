@@ -17,14 +17,11 @@ import cn.bmob.v3.BmobUser;
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.FindListener;
 
-/**
- * Created by 74434 on 2018/3/9.
- */
 
 public class CanteenDAO {
     //查找：某校所有食堂
     public static void getCampusCanteen(final Handler handler) {
-        BmobQuery<Canteen> query = new BmobQuery<Canteen>();
+        BmobQuery<Canteen> query = new BmobQuery<>();
 
         JrsUser currentUser=JrsUser.getCurrentUser(JrsUser.class);
 
@@ -43,7 +40,6 @@ public class CanteenDAO {
                     handler.sendMessage(message);
 
                 } else {
-                    Toast.makeText(RegisterActivity.mContext,"您的网络走丢了= =",Toast.LENGTH_SHORT);
                     Log.e("bmob", "" + e);
                 }
             }
