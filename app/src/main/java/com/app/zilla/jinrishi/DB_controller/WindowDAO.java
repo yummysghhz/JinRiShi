@@ -5,6 +5,7 @@ import android.os.Message;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.app.zilla.jinrishi.BmobObj.Campus;
 import com.app.zilla.jinrishi.BmobObj.Canteen;
 import com.app.zilla.jinrishi.BmobObj.JrsUser;
 import com.app.zilla.jinrishi.BmobObj.Window;
@@ -19,28 +20,22 @@ import cn.bmob.v3.listener.FindListener;
 
 public class WindowDAO {
     //查找：某食堂所有窗口
-    public static void getWindowWindow(final Handler handler) {
+    public static void getWindow() {
         BmobQuery<Window> query = new BmobQuery<>();
-
-        JrsUser currentUser=JrsUser.getCurrentUser(JrsUser.class);
-
-        System.out.println(currentUser.getSchool().getObjectId());
-
-        query.addWhereEqualTo("canteenIn",currentUser.getSchool().getObjectId());
-
+        String objectID="uy1b777e";
+        //canteen的objectID是传进来的
+        Canteen canteen=new Canteen();
+        canteen.setObjectId(objectID);
+        query.addWhereEqualTo("canteenIn",canteen);
+        query.include("canteenIn");
         query.findObjects(new FindListener<Window>() {
             @Override
             public void done(List<Window> list, BmobException e) {
                 if (e == null) {
-                    Message message = handler.obtainMessage();
-                    //以消息为载体
-                    message.obj = list;//这里的list就是查询出list
-                    //向handler发送消息
-                    handler.sendMessage(message);
-
+                    list.toString();
                 } else {
                     //Toast.makeText(mContext,"您的网络走丢了= =",Toast.LENGTH_SHORT);
-                    Log.e("bmob", "" + e);
+                    Log.e("bmob", "QUERY FAILED" + e);
                 }
             }
         });

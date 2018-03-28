@@ -3,6 +3,7 @@ package com.app.zilla.jinrishi.DB_controller;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
+import android.view.accessibility.CaptioningManager;
 import android.widget.Toast;
 
 import com.app.zilla.jinrishi.BmobObj.Campus;
@@ -20,7 +21,8 @@ import cn.bmob.v3.listener.FindListener;
 
 public class CanteenDAO {
     //查找：某校所有食堂
-    public static void getCampusCanteen(final Handler handler) {
+    public static void getCampusCanteen() {
+        /*
         BmobQuery<Canteen> query = new BmobQuery<>();
 
         JrsUser currentUser=JrsUser.getCurrentUser(JrsUser.class);
@@ -44,5 +46,23 @@ public class CanteenDAO {
                 }
             }
         });
+        */
+
+        BmobQuery<Canteen> query=new BmobQuery<>();
+        JrsUser currentUser=JrsUser.getCurrentUser(JrsUser.class);
+        Campus campus=currentUser.getSchool();
+        query.addWhereEqualTo("campusIn",campus);
+        //query.include("campusIn");
+        query.findObjects(new FindListener<Canteen>() {
+            @Override
+            public void done(List<Canteen> list, BmobException e) {
+                if(e==null){
+                    Log.d("bmob",list.toString());
+                }else {
+                    e.printStackTrace();
+                }
+            }
+        });
     }
+
 }
