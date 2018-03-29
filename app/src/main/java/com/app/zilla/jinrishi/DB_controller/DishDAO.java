@@ -20,7 +20,7 @@ public class DishDAO {
     // 增删改直接在bmob图形化界面做，暂不写
     //主要写 findDishInWindow(window）
     //查找 用户收藏的菜：User表的likes（类型：List<Dish>） findDishByID？？？
-    public static void findDishInWindow(){
+    public static void getDishInWindow(){
         BmobQuery<Dish> query=new BmobQuery<>();
         Window window=new Window();
         String objectID="mNBacccl";
@@ -38,5 +38,9 @@ public class DishDAO {
                 }
             }
         });
+    }
+
+    public static void getDishByID(List<String> likelist){
+
     }
 }

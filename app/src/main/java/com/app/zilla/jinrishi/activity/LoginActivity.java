@@ -87,7 +87,7 @@ public class LoginActivity extends AppCompatActivity {
             public void done(JrsUser jrsUser, BmobException e) {
                 if (jrsUser!=null){
                     Toast.makeText(LoginActivity.this,"登录成功",Toast.LENGTH_SHORT).show();
-                    Intent intent=new Intent(LoginActivity.mContext,TestActivity.class);
+                    Intent intent=new Intent(LoginActivity.mContext,MainActivity.class);
                     LoginActivity.mContext.startActivity(intent);
                 }else {
                     Toast.makeText(LoginActivity.this,"登录失败",Toast.LENGTH_SHORT).show();

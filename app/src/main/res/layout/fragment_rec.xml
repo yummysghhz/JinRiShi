@@ -4,12 +4,9 @@
     android:layout_height="match_parent"
     tools:context="com.app.zilla.jinrishi.fragment.RecFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ExpandableListView
+        android:id="@+id/canteen_window_list"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="OneFragment"
-        android:textSize="50dp" />
+        android:layout_height="match_parent" />
 
 </FrameLayout>

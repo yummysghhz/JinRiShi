@@ -59,12 +59,12 @@ public class RegisterActivity extends AppCompatActivity implements CampusItemAda
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);//去掉信息栏
 
         setContentView(R.layout.activity_register);
-        username_et = (EditText) findViewById(R.id.username_et);
-        school_sp = (Spinner) findViewById(R.id.school_sp);
-        password_et = (EditText) findViewById(R.id.password_et);
-        password_re = (EditText) findViewById(R.id.password_re);
-        signup_btn = (Button) findViewById(R.id.signup_btn);
-        back_btn=(Button)findViewById(R.id.back_btn);
+        username_et = findViewById(R.id.username_et);
+        school_sp = findViewById(R.id.school_sp);
+        password_et = findViewById(R.id.password_et);
+        password_re = findViewById(R.id.password_re);
+        signup_btn = findViewById(R.id.signup_btn);
+        back_btn = findViewById(R.id.back_btn);
 
         CampusDAO.getAllCampus(handler);
 
@@ -122,10 +122,12 @@ public class RegisterActivity extends AppCompatActivity implements CampusItemAda
             final RegisterActivity thisActivity=mActivity.get();
             thisActivity.spinner_list.clear();
             List<Campus> list = (List<Campus>) msg.obj;
+            /*
             for (Campus campus : list) {
                 System.out.println(campus.toString());
                 //spinner_list.add(campus);
             };
+            */
             thisActivity.spinner_list.addAll(list);
             CampusItemAdapter adapter = new CampusItemAdapter(thisActivity, thisActivity.spinner_list,thisActivity);
             thisActivity.school_sp.setAdapter(adapter);
