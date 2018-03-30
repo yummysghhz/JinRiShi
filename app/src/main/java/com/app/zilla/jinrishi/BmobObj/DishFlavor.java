@@ -7,58 +7,58 @@ import cn.bmob.v3.BmobObject;
  */
 
 public class DishFlavor extends BmobObject {
-    private Integer sour;
-    private Integer sweet;
-    private Integer spicy;
-    private Integer salty;
-    private Integer surprise;
-    private Integer homely;
+    private Float sour;
+    private Float sweet;
+    private Float spicy;
+    private Float salty;
+    private Float surprise;
+    private Float homely;
 
-    public Integer getSour() {
+    public Float getSour() {
         return sour;
     }
 
-    public void setSour(Integer sour) {
+    public void setSour(Float sour) {
         this.sour = sour;
     }
 
-    public Integer getSweet() {
+    public Float getSweet() {
         return sweet;
     }
 
-    public void setSweet(Integer sweet) {
+    public void setSweet(Float sweet) {
         this.sweet = sweet;
     }
 
-    public Integer getSpicy() {
+    public Float getSpicy() {
         return spicy;
     }
 
-    public void setSpicy(Integer spicy) {
+    public void setSpicy(Float spicy) {
         this.spicy = spicy;
     }
 
-    public Integer getSalty() {
+    public Float getSalty() {
         return salty;
     }
 
-    public void setSalty(Integer salty) {
+    public void setSalty(Float salty) {
         this.salty = salty;
     }
 
-    public Integer getSurprise() {
+    public Float getSurprise() {
         return surprise;
     }
 
-    public void setSurprise(Integer surprise) {
+    public void setSurprise(Float surprise) {
         this.surprise = surprise;
     }
 
-    public Integer getHomely() {
+    public Float getHomely() {
         return homely;
     }
 
-    public void setHomely(Integer homely) {
+    public void setHomely(Float homely) {
         this.homely = homely;
     }
 }

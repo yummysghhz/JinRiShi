@@ -1,6 +1,5 @@
 package com.app.zilla.jinrishi.fragment;
 
-
 import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
@@ -94,7 +93,6 @@ public class RecFragment extends Fragment {
                             if(!TextUtils.isEmpty(winName)){
                                 Toast.makeText(getContext(),winName,Toast.LENGTH_SHORT).show();
                                 //todo Intent--->RecDishActivity
-
 
                             }
                         }

@@ -1,5 +1,7 @@
 package com.app.zilla.jinrishi.BmobObj;
 
+import android.renderscript.ScriptIntrinsicYuvToRGB;
+
 import java.io.File;
 import java.util.ArrayList;
 
@@ -64,5 +66,17 @@ public class JrsUser extends BmobUser {
 
     public void setFlavor_pref(UserFlavor flavor_pref) {
         this.flavor_pref = flavor_pref;
+    }
+
+    public String getLevel(){
+        if(this.credit<300){
+            return "少年不谙食堂味";
+        }else if (this.credit<1000){
+            return "有了二三心头好";
+        }else if(this.credit<3000){
+            return "阿姨看你超眼熟";
+        }else{
+            return "读万卷品百味";
+        }
     }
 }
